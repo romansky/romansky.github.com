@@ -5,17 +5,18 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rbenv-version", "README.md", "Rakefile"]
 auto: true
 pygments: true
+server_port: 80
+safe: true
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
+title : But Does It Compile?
 author :
   name : Roman Land
   email : roman.land@gmail.com
   github : romansky
-  twitter : 
-  feedburner : 
+  facebook: romansky
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -25,7 +26,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : romansky.github.com
+production_url : romansky
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -40,7 +41,7 @@ JB :
   # Leave this blank if you have defined a CNAME for your site (pages.github.com)
   # NOTE: When in localhost, your site will run from root "/" regardless of BASE_PATH
   #
-  BASE_PATH : ""
+  BASE_PATH : 
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
@@ -66,11 +67,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
-    livefyre :
-      site_id : 123
-    intensedebate :
-      account : 123abc
+      short_name : romanskys-blog
     facebook :
       apikey : 123
    
@@ -81,9 +78,7 @@ JB :
   analytics :
     provider : google
     google : 
-        tracking_id : 'UA-123-12'
-    getclicky :
-      site_id : 
+        tracking_id : 'UA-28741273-1'
 
   # Settings for sharing helper. 
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.

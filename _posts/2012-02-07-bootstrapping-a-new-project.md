@@ -9,7 +9,7 @@ tags: []
 So, you have a new shiny project on your lap, so now what?  
 First post in a series, where I talk about kicking off a new software project, and dive into the details of what you need to know to survive the rough sail in the seas of a new software project, from conception, to beginning of implementation.
 #### Waterfall
-One (somewhat notorious in the software community) approach is the "waterfall" model, there is allot of information about it on the web, and here are some highlights of why its perceived to be bad:
+One (somewhat notorious in the software community) approach is the "waterfall" model, there is a lot of information about it on the web, and here are some highlights of why its perceived to be bad:
 
  - It assumes that the initial requirements will not change
  - There is only one version delivered to the stake holders, at the end of the process

@@ -11,3 +11,16 @@
 
 .licence { clear: left; }
 
+.the-footer .unit-inner h1,
+  .the-footer .unit-inner h2,
+  .the-footer .unit-inner h3,
+  .the-footer .unit-inner h4,
+  .the-footer .unit-inner h5,
+  .the-footer .unit-inner p,
+  .the-footer .unit-inner ul,
+  .the-footer .unit-inner ol,
+  .the-footer .unit-inner dl,
+  .the-footer .unit-inner blockquote {
+    margin-left: 0px !important;
+    margin-right: 360px;
+  }

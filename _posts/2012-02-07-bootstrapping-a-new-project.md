@@ -5,49 +5,49 @@ category: 'code'
 tags: []
 ---
 {% include JB/setup %}
-### My opinion on: How to give your new project a good starting point
+### My take on: How to give your new project a good starting point
+
 So, you have a new shiny project on your lap, so now what?  
-First post in a series, where I talk about kicking off a new software project, and dive into the details of what you need to know to survive the rough sail in the seas of a new software project, from conception, to beginning of implementation.
+Today everyone is talking about "agile", and how its better then the old "waterfall" methodology of doing things
+
 #### Waterfall
-One (somewhat notorious in the software community) approach is the "waterfall" model, there is a lot of information about it on the web, and here are some highlights of why its perceived to be bad:
+The "Waterfall" approach is notorious in the software community, some highlights of why this is the case:
 
- - It assumes that the initial requirements will not change
- - There is only one version delivered to the stake holders, at the end of the process
- - After the design stage, the estimates are "set in stone", expectations are to be met on the final day of the project (or the first day of that stage thereof)
+ * It assumes that the initial requirements will not change
+ * There is only one version delivered to the stake holders, at the end of the process
+ * All the planning and "thinking" happen only in the beginning of the project
+
 #### Agile
-Another approach, the craze today in the development community, an industry by itself, is of course the "Agile" methodology.  
-It is a world of sub cultures, some of which are: "XP" (eXtreme Programming), "scrum", "Kanban" to name a few.  
-
+Everyone likes "Agile", its the "cool" way to manage a project, it asks for less paperwork, less work upfront, built from the ground up to support changes, to name a few conceptions about it.
+While I call it "Agile" here, in reality it is a world of sub cultures, some of which are: "XP" (eXtreme Programming), "scrum", "Kanban" to name a few.
+The difference between specific cultures is not always clear, we don't necessarily have to stick to one, we can mix and match, like I am doing here, thus from this point onward I will just ignorantly call it "Agile" with out specifying the specific methodology.
 The main strengths going for the Agile methodology are
 
- * Short requirements collection loop, followed by a short design process
- * Iterations, plan for when the iteration ends (usually couple of weeks ahead)
- * Quick turn around with initial results
- * Issues (due to bad requirements / design) are found much earlier in the process
+ * Short upfront work phase (requirements, design ..)
+ * Iterations - project is broken down to deliverables, which is translated to real value delivered very early in the project lifetime
+ * Changes are welcome and expected and are introduced into following iterations (bugs found in previous deliverables, design "inadequacies")
 
-As any UI developer would tell you, there's nothing quite like a quick feedback loop, especially when working on a big complex project  
-Still, Agile is a matter of style, some even tie in TDD (Test Driven Development) or BDD (Behavior Driven Development - "TDD 2.0" according to some) 
+Doing things in small pieces is great, just ask a WEB developer, how there's nothing quite like writing a bit of code, refreshing the page and seeing the changes reflected, especially when working on a big complex project. This gives you a feeling of progress and achievement, even though the end goal is far far away..
 
-#### The bare minimum
-IMHO, here are the bare minimal things you have to do when starting work on a new development project:
+Some Agile approaches talk beyond writing business code and going into proactive bug searching using TDD (Test Driven Development), which turns out to be a good fit to the overall process as it secures quality of delivered pieces of logic.
+BDD (Behavior Driven Development) is very similar to TDD, but instead of going after "test coverage" it takes on a higher level, business specification driven approach, where the business embodied user stories are part of the actual test suite.
 
- * A list of "user stories"
- * HLD (High Level Design)
- * System diagram
- * Sequence diagram
- * Mock-ups (in the case of a UI app)
+#### My recipe for success
+
+ * User Stories
+ * Mock-ups (in the case of an app that has UI)
+ * HLD (High Level -system component- Design)
+ * Process Sequence diagram / Workflow diagram (possibly atop HLD)
 
 #### Tooling
-Here are the tools I personally use to kick start the development process
 
- * Google Document- User Stories
- * Google Drawing- mockups, system diagrams, HLD
- * Lucidchart- system diagram, sequence diagram
+Tools tha keep me productive:
 
-In addition, I use a web based project management tool as a central place to keep reference to important docs and user stories, and manage my progress (and others working on the project). As of late the tool for the job is [Trello.com](http://www.trello.com), a free, super simple and productive web based project management app.
+ * Google Document (User Stories)
+ * Google Drawing (mockups, diagrams, HLD)
+ * Lucidchart (diagrams)
 
-Stay tuned as I go deeper in the rabbit hole and talk about every point in my "bare minimum" list. (an update once a week, will add to this post)  
+In addition, I use a light weight web based project management tool as a central place to keep reference to important docs and user stories, and see my progress (and others working on the project). A great tool for the job is [Trello.com](http://www.trello.com) - which free and super simple!
 
-It goes without saying that there is much more to delivering the actual product, my goal is to tell you about my experience in starting new projects.
-
-Next week I will talk about "user stories", why they are important, and how to write them..
+#### REATED UPDATES:
+[User Stories](/code/2012/02/25/user-stories/)

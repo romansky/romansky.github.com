@@ -14,7 +14,7 @@ Today everyone is talking about "agile", and how its better then the old "waterf
 The "Waterfall" approach is notorious in the software community, some highlights of why this is the case:
 
  * It assumes that the initial requirements will not change
- * There is only one version delivered to the stake holders, at the end of the process
+ * There is only one version delivered to the stakeholders, at the end of the process
  * All the planning and "thinking" happen only in the beginning of the project
 
 #### Agile
@@ -41,7 +41,7 @@ BDD (Behavior Driven Development) is very similar to TDD, but instead of going a
 
 #### Tooling
 
-Tools tha keep me productive:
+Tools that keep me productive:
 
  * Google Document (User Stories)
  * Google Drawing (mockups, diagrams, HLD)

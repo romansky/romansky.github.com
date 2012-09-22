@@ -51,7 +51,7 @@ pubsub.trigger 'myEvent', 5
 pubsub.trigger 'myEvent', 5,10
 {% endhighlight %}
 
-The "pubsub.on(event name, callback)" API is very common. here's an example of how a generic implementation might look like:
+The "pubsub.on(event name, callback)" API is very common amongst different JS pub/sub frameworks. here's an example of how a generic implementation might look like:
 
 
 {% highlight coffeescript %}

@@ -2,7 +2,7 @@
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink: /:categories/:year/:month/:day/:title 
 
-exclude: [".rbenv-version", "README.md", "Rakefile"]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 pygments: true
 server_port: 8001
@@ -11,7 +11,7 @@ safe: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : But Does It Compile?
+title : romansky
 author :
   name : Roman Land
   email : roman.land@gmail.com
@@ -31,17 +31,32 @@ production_url : romansky
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
-  version : 0.1.0
+  version : 0.2.13
 
   # All links will be namespaced by BASE_PATH if defined.
-  # This is required for hosting GitHub Project Pages.
-  # If you are deploying this website for one of your GitHub projects
-  # you must set BASE_PATH to the name of your GitHub project.
+  # Links in your website should always be prefixed with {{BASE_PATH}}
+  # however this value will be dynamically changed depending on your deployment situation.
   #
-  # Leave this blank if you have defined a CNAME for your site (pages.github.com)
-  # NOTE: When in localhost, your site will run from root "/" regardless of BASE_PATH
+  # CNAME (http://yourcustomdomain.com)
+  #   DO NOT SET BASE_PATH 
+  #   (urls will be prefixed with "/" and work relatively)
   #
   BASE_PATH : 
+  # GitHub Pages (http://username.github.com)
+  #   DO NOT SET BASE_PATH 
+  #   (urls will be prefixed with "/" and work relatively)
+  #
+  # GitHub Project Pages (http://username.github.com/project-name)
+  #
+  #   A GitHub Project site exists in the `gh-pages` branch of one of your repositories.
+  #  REQUIRED! Set BASE_PATH to: http://username.github.com/project-name
+  #
+  # CAUTION:
+  #   - When in Localhost, your site will run from root "/" regardless of BASE_PATH
+  #   - Only the following values are falsy: ["", null, false]
+  #   - When setting BASE_PATH it must be a valid url.
+  #     This means always setting the protocol (http|https) or prefixing with "/"
+  #BASE_PATH : false
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
@@ -69,14 +84,17 @@ JB :
     disqus :
       short_name : romanskys-blog
     facebook :
-      apikey : 123
+      appid : 123
+      num_posts: 5
+      width: 580
+      colorscheme: light
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : google
+    provider : google 
     google : 
         tracking_id : 'UA-28741273-1'
 

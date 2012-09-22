@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Whats Going On Here?
+title: We're all are really just passing through..
 ---
 {% include JB/setup %}
 

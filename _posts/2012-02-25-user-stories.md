@@ -5,7 +5,6 @@ category: 'code'
 tags: []
 ---
 {% include JB/setup %}
-### User Stories
 
 This post is a follow-up on ["Bootstrapping A New Project"](/code/2012/02/07/bootstrapping-a-new-project/)
 

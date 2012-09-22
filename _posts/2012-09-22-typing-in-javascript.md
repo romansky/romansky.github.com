@@ -5,7 +5,6 @@ category: 'code'
 tags: []
 ---
 {% include JB/setup %}
-## Typing in JavaScript?
 
 "Strong typing is for people with weak memories" - not sure who originally said that, but you have got to love the enthusiasm people have for dynamic languges. What is there not to love? powerful basic language constructs such as closure, prototypal inheritance, objects as first class citizens and anonymous functions, mainly, with which you can simulate almost anything static languages have to offer!
 
@@ -35,10 +34,10 @@ While the PubSub (also known as observer pattern) in JavaScript is a powerful to
 
 **Pub/Sub implementation in Backbone/Underscore.JS**
 
-```coffeescript
+{% highlight coffeescript %}
 pubsub = _.extend {}, Backbone.Events
 pubsub.on 'myEvent', (param1, param2)->
-    x1 = param1 + param2
+	x1 = param1 + param2
 	# do something with x1
 
 # in some other obscure location in the code
@@ -50,17 +49,18 @@ pubsub.on 'myEvent', (param1)->
 pubsub.trigger 'myEvent', 5
 # ...
 pubsub.trigger 'myEvent', 5,10
-```
+{% endhighlight %}
 
-The "pubsub.on(\<event name\>, \<callback\>)" API is very common. here's an example of how a generic implementation might look like:
+The "pubsub.on(event name, callback)" API is very common. here's an example of how a generic implementation might look like:
 
-```coffeescript
+
+{% highlight coffeescript %}
 pubsub = {
 	_listeners : {}
 	on : (channel, callback)->
 		@_listeners[ channel ] ?= []
 		@_listeners[ channel ].push callback
-	
+
 	trigger : (channel, params...)->
 		@_listeners[ channel ]?.forEach (cb)-> cb.apply(null, params)
 }
@@ -78,7 +78,8 @@ pubsub.on 'myEvent', (param1)->
 pubsub.trigger 'myEvent', 5
 # ...
 pubsub.trigger 'myEvent', 5,10
-```
+{% endhighlight %}
+
 
 If your using the very popular Socket.IO library, for realtime client/server communication, you are using the exact same API, in which case it makes it even more complicated to keep track of, since the ambiguity is manifested on both the client and the server.
 
@@ -86,11 +87,11 @@ If your using the very popular Socket.IO library, for realtime client/server com
 
 This is how a type related bug might look like in a dynamic language
 
-```coffeescript
+{% highlight coffeescript %}
 a = "42" # returned from some API
 a == 42
 => false
-```
+{% endhighlight %}
 
 ## Enter "Contractor" & "Backbone-typed"
 
@@ -104,7 +105,7 @@ I'm introducing a convention here, that helps keep the API consistent across the
 
 Example:
 
-```coffeescript
+{% highlight coffeescript %}
 # declare the events and their APIs
 Messages = {
 	LoginEvent : Contractor.Create( "LoginEvent", Contractor.Required("user ID"), Contractor.Optional("additional info") )
@@ -121,14 +122,14 @@ pubsub.apply(pubsub, Messages.LoginEvent(112233))
 
 pubsub.apply(pubsub, Messages.AppErrorEvent(112233, "user did not have access to resource", e))
 pubsub.apply(pubsub, Messages.AppErrorEvent(112233)) # since we did not provide the second required argument, this will log an error and return null
-```
+{% endhighlight %}
 
 With NodeJS, I am using the same code on the front and back end, which makes it really easy to manage my Socket.IO communication.
 
 If you have been paying attention, you noticed that it did not touch the second issue I presented, object types. With much appreciation to Backbone extendable it is, "backbone-typed" adds optional typing to Backbone Models.
 Example:
 
-```coffeescript
+{% highlight coffeescript %}
 Wearing = {
 	"bracelet" : "bracelet"
 	"watch" : "watch"
@@ -160,6 +161,6 @@ user2.set({wearing: Wearing.bracelet})
 
 if user2.get("lotteryNumber") == 54321 and user2.get("wearing") == Wearing.bracelet then user2.set({isAwesome: "true"})
 user2.toJSON() #=> {name: "bar", email: "bar@foo.com", lotteryNumber: 54321, isAwesome: true, wearing: "bracelet"} - awesome for sure..
-```
+{% endhighlight %}
 
 If you want to know a little more about how these work, please visit the respective Git repositories, and let me know what you think!

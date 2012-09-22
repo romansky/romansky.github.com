@@ -37,7 +37,7 @@ tags: []
 
  4. make it executable: `chmod u+x ~/bin/sbt`
  
-#### Setup [android-plugin](from https://github.com/jberkel/android-plugin/wiki/Getting-started) for Scala support
+#### Setup [android-plugin](https://github.com/jberkel/android-plugin/wiki/Getting-started) for Scala support
 
  1. install giter8 `curl https://raw.github.com/n8han/conscript/master/setup.sh | sh`
 

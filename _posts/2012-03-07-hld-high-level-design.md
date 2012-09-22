@@ -6,7 +6,6 @@ tags: []
 ---
 {% include JB/setup %}
 
-### HLD - High Level Design
 
 This post is a follow-up on ["Bootstrapping A New Project"](/code/2012/02/07/bootstrapping-a-new-project/)
 

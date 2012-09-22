@@ -34,43 +34,45 @@ While the PubSub (also known as observer pattern) in JavaScript is a powerful to
 
 
 **Pub/Sub implementation in Backbone/Underscore.JS**
+
 ```coffeescript
 pubsub = _.extend {}, Backbone.Events
 pubsub.on 'myEvent', (param1, param2)->
     x1 = param1 + param2
-    # ... do something with x1..
+	# do something with x1
 
 # in some other obscure location in the code
 pubsub.on 'myEvent', (param1)->
-    x2 = param1
-    # .... do something with x2
+	x2 = param1
+	# do something with x2
 
 # ...
 pubsub.trigger 'myEvent', 5
 # ...
 pubsub.trigger 'myEvent', 5,10
 ```
+
 The "pubsub.on(\<event name\>, \<callback\>)" API is very common. here's an example of how a generic implementation might look like:
 
 ```coffeescript
 pubsub = {
-    _listeners : {}
-    on : (channel, callback)->
-        @_listeners[ channel ] ?= []
-        @_listeners[ channel ].push callback
-    
-    trigger : (channel, params...)->
-        @_listeners[ channel ]?.forEach (cb)-> cb.apply(null, params)
+	_listeners : {}
+	on : (channel, callback)->
+		@_listeners[ channel ] ?= []
+		@_listeners[ channel ].push callback
+	
+	trigger : (channel, params...)->
+		@_listeners[ channel ]?.forEach (cb)-> cb.apply(null, params)
 }
 
 pubsub.on 'myEvent', (param1, param2)->
-    x1 = param1 + param2
-    # ... do something with x1..
+	x1 = param1 + param2
+	# ... do something with x1..
 
 # in some other obscure location in the code
 pubsub.on 'myEvent', (param1)->
-    x2 = param1
-    # .... do something with x2
+	x2 = param1
+	# .... do something with x2
 
 # ...
 pubsub.trigger 'myEvent', 5
@@ -101,11 +103,12 @@ https://github.com/romansky/backbone-typed
 I'm introducing a convention here, that helps keep the API consistent across the application, the approach here is to create wrapper functions, that are used as both the API documentation and run-time validation facility for required and optional arguments.
 
 Example:
+
 ```coffeescript
 # declare the events and their APIs
 Messages = {
-    LoginEvent : Contractor.Create( "LoginEvent", Contractor.Required("user ID"), Contractor.Optional("additional info") )
-    AppErrorEvent : Contractor.Create( "AppErrorEvent", Contractor.Required("user ID"), Contractor.Required("error description"), Contractor.Optional("exception") )
+	LoginEvent : Contractor.Create( "LoginEvent", Contractor.Required("user ID"), Contractor.Optional("additional info") )
+	AppErrorEvent : Contractor.Create( "AppErrorEvent", Contractor.Required("user ID"), Contractor.Required("error description"), Contractor.Optional("exception") )
 }
 
 # register on event API
@@ -124,27 +127,28 @@ With NodeJS, I am using the same code on the front and back end, which makes it 
 
 If you have been paying attention, you noticed that it did not touch the second issue I presented, object types. With much appreciation to Backbone extendable it is, "backbone-typed" adds optional typing to Backbone Models.
 Example:
+
 ```coffeescript
 Wearing = {
-    "bracelet" : "bracelet"
-    "watch" : "watch"
+	"bracelet" : "bracelet"
+	"watch" : "watch"
 }
 
 class User extends TypedModel
-    defaults: {
-        name: null
-        email: null
-        lotteryNumber: null
-        isAwesome: null
-    }
+	defaults: {
+		name: null
+		email: null
+		lotteryNumber: null
+		isAwesome: null
+	}
 
-    types: {
-        name: Types.String
-        email: Types.String
-        lotteryNumber: Types.Integer
-        isAwesome: Types.Boolean
-        wearing : Types.Enum(Wearing)
-    }
+	types: {
+		name: Types.String
+		email: Types.String
+		lotteryNumber: Types.Integer
+		isAwesome: Types.Boolean
+		wearing : Types.Enum(Wearing)
+	}
 
 user1 = new User({name: "foo", email: "foo@bar.com", lotteryNumber: 12345, isAwesome: true, wearing: Wearing.watch})
 user1.toJSON() #=> {name: "foo", email: "foo@bar.com", lotteryNumber: 12345, isAwesome: true, wearing: "watch"} - nothing special going on here..

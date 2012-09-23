@@ -126,7 +126,7 @@ pubsub.apply(pubsub, Messages.AppErrorEvent(112233)) # since we did not provide 
 
 With NodeJS, I am using the same code on the front and back end, which makes it really easy to manage my Socket.IO communication.
 
-If you have been paying attention, you noticed that it did not touch the second issue I presented, object types. With much appreciation to Backbone extendable it is, "backbone-typed" adds optional typing to Backbone Models.
+If you have been paying attention, there's still the type issue. Since I work allot with Backbone, it made a lot of sense to write "backbone-typed" which adds optional typing to Backbone-Models.
 Example:
 
 {% highlight coffeescript %}

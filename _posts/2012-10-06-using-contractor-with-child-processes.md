@@ -9,9 +9,9 @@ tags: []
 
 `Contractor` is a factory of contracts, that helps with documenting our APIs.
 The child_process facility built into node is using `EventEmitter` (v1), and does not support callbacks, so it is a great fit for `Contractor`!
-Since I needed it for a distributed worker framework I am working on, I added a helper facility called "Laweyer", it basically reads the contracts and routes them to the provided object.
+Since I needed it for a distributed worker framework I am working on, I added a helper facility called "Lawyer", it basically reads the contracts and routes them to the provided object.
 
-#### Let us take the parent and child example code from Node's official documentation (http://nodejs.org/api/child_process.html) and see how simple it would be to add some documentation to out child_process communication.
+__Let us take the parent and child example code from Node's official documentation (http://nodejs.org/api/child_process.html) and see how simple it would be to add some documentation.__
 
 Parent
 
@@ -37,7 +37,7 @@ process.on('message', function(m) {
 process.send({ foo: 'bar' });
 {% endhighlight %}
 
-#### Node's child_process facility provied us with a very basic means of communication, we simply call `n.send({any: "thing"})` and it automagically recieved by the forked child.  Let's spice it up with a more RPC message passing style, with contracts and lawyers
+__Node's child_process facility provied us with a very basic means of communication, we simply call `n.send({any: "thing"})` and it automagically recieved by the forked child.  Let's spice it up with a more RPC message passing style, with contracts and lawyers__
 
 contracts.js
 

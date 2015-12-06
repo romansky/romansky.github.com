@@ -1,0 +1,36 @@
+.vcard img {
+        background: none repeat scroll 0 0 #EEEEEE;
+        border: 1px solid #CCCCCC;
+        float: left;
+        margin: 0.2em 1em 0 0;
+        padding: 0.3em;
+	width: 65px;
+}
+
+.vcard ul { float: left; }
+
+.licence { clear: left; }
+
+.the-footer .unit-inner h1,
+  .the-footer .unit-inner h2,
+  .the-footer .unit-inner h3,
+  .the-footer .unit-inner h4,
+  .the-footer .unit-inner h5,
+  .the-footer .unit-inner p,
+  .the-footer .unit-inner ul,
+  .the-footer .unit-inner ol,
+  .the-footer .unit-inner dl,
+  .the-footer .unit-inner blockquote {
+    margin-left: 0px !important;
+  }
+
+pre { background-color: white !important }
+pre code {
+ white-space: pre !important;
+ color: black;
+ border: 0 !important;
+ border-radius: 0 !important;
+ color: black;
+ margin: 0 !important;
+ padding: 0 !important;
+}

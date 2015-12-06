@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 Thumbs.db
 db.json
@@ -5,3 +6,15 @@ debug.log
 node_modules/
 public/
 .deploy/
+=======
+_site/*
+_theme_packages/*
+
+Thumbs.db
+.DS_Store
+
+!.gitkeep
+
+.rbenv-version
+.rvmrc
+>>>>>>> 7c06b60cef341ac33a5f4356282e1f39a44fd231

@@ -1,6 +1,6 @@
 {
   "name": "uniformly-random-blog",
-  "version": "2.7.1",
+  "version": "2.7.0",
   "private": true,
   "dependencies": {
     "hexo-renderer-ejs": "*",
